@@ -1,12 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
     box-sizing: border-box;
 }
 
-.app{
+body {
+
+    background: linear-gradient(135deg, #cf9aff, #95c0ff);
+    ;
+}
+
+.app {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,18 +21,18 @@
 
 }
 
-.calculator{
+.calculator {
     background-color: #22252d;
     width: 100%;
-    max-width: 375px;
-    min-height: 640px;
+    max-width: 23rem;
+    min-height: 40rem;
     display: flex;
     flex-direction: column;
     border-radius: 1.5rem;
     overflow: hidden;
 }
 
-.display{
+.display {
     min-height: 200px;
     padding: 1.5rem;
     display: flex;
@@ -37,12 +44,12 @@
 
 }
 
-.display .input{
+.display .input {
     font-size: 1.25rem;
     margin: 0.5rem;
 }
 
-.display .output{
+.display .output {
     font-size: 3rem;
     font-weight: 700;
     width: 100%;
@@ -50,15 +57,16 @@
     overflow: auto;
 }
 
-.display .operator{
+.display .operator {
     color: #eb6666;
 }
 
-.display .brackets, .display .percent {
+.display .brackets,
+.display .percent {
     color: #26fed7;
 }
 
-.keys{
+.keys {
     background-color: #292d36;
     padding: 1.5rem;
     border-radius: 1.5rem 1.5rem 0 0;
@@ -66,10 +74,10 @@
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-gap: 1rem;
-    box-shadow: 0px -2px 16px rgba(0, 0,0,0.2);
+    box-shadow: 0px -2px 16px rgba(0, 0, 0, 0.2);
 }
 
-.keys .key{
+.keys .key {
     position: relative;
     cursor: pointer;
 
@@ -82,7 +90,7 @@
     user-select: none;
 }
 
-.keys .key span{
+.keys .key span {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -93,14 +101,35 @@
 }
 
 
-.keys .key:hover{
-    box-shadow: inset 0px 0 8px rgba(0,0,0,0.2);
+.keys .key:hover {
+    box-shadow: inset 0px 0 8px rgba(0, 0, 0, 0.2);
 }
 
-.keys .key.operator span{
+.keys .key.operator span {
     color: #eb6666;
 }
 
-.keys .key.action span{
+.keys .key.action span {
     color: #26fed7;
+}
+
+@media (max-width:800px) {
+    html {
+        font-size: 14px;
+    }
+
+    .calculator {
+        max-width: 20rem;
+        min-height: 35rem;
+    }
+
+    .keys .key span {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 12px;
+    }
 }
